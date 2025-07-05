@@ -1,0 +1,325 @@
+/* Importação de fontes do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap");
+
+:root {
+  --primary-color: #007bff; /* Azul vibrante */
+  --secondary-color: #6c757d; /* Cinza para detalhes */
+  --dark-bg: #212529; /* Fundo escuro */
+  --light-text: #f8f9fa; /* Texto claro */
+  --card-bg: #343a40; /* Fundo de card */
+  --border-color: #495057; /* Cor da borda */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--light-text);
+  background-color: var(--dark-bg);
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 2rem;
+}
+
+nav ul li a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* --- Botão Global --- */
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: 0.8rem 1.8rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Um tom mais escuro do azul */
+  transform: translateY(-2px);
+}
+
+/* --- Seções Gerais --- */
+section {
+  padding: 6rem 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  color: var(--light-text);
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #ced4da;
+}
+
+/* --- Seção Hero --- */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://via.placeholder.com/1920x1080/007bff/FFFFFF?text=Coding+Background")
+      no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-text);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+/* --- Seção de Serviços --- */
+.services {
+  background-color: var(--dark-bg);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-item {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.service-item h3 {
+  color: var(--primary-color);
+}
+
+/* --- Seção de Portfólio --- */
+.portfolio {
+  background-color: #2c3034;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.portfolio-item {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-item h3 {
+  padding: 1.5rem 1rem 0.5rem;
+  color: var(--primary-color);
+}
+
+.portfolio-item p {
+  padding: 0 1rem 1.5rem;
+  color: #adb5bd;
+}
+
+/* --- Seção de Contato --- */
+.contact {
+  background-color: var(--dark-bg);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 2rem auto 0;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+}
+
+.contact form input,
+.contact form textarea {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: #495057;
+  color: var(--light-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+  color: #adb5bd;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.contact form button {
+  align-self: flex-start; /* Alinha o botão à esquerda dentro do formulário */
+}
+
+/* --- Rodapé --- */
+footer {
+  background-color: var(--dark-bg);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0.5rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .service-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 4rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}
