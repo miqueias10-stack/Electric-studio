@@ -3,92 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Electric Studio - Soluções em programação, desenvolvimento web e sistemas sob medida." />
-    <meta name="keywords" content="programação, desenvolvimento web, sites, software, Electric Studio" />
-    <meta name="author" content="Electric Studio" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Electric Studio - Soluções em Programação" />
-    <meta property="og:description" content="Desenvolvimento de software e soluções em programação sob medida." />
+    <meta name="description" content="Electric Studio - Sites, landing pages e lojas virtuais sob medida. Peça seu orçamento." />
+    <meta property="og:title" content="Electric Studio - Faça seu orçamento" />
+    <meta property="og:description" content="Sites, landing pages e lojas virtuais sob medida." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="imagem-de-preview.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Electric Studio - Soluções em Programação" />
-    <meta name="twitter:description" content="Desenvolvimento de software e soluções em programação sob medida." />
+    <meta property="og:image" content="logo.png" />
 
+    <link rel="icon" type="image/png" href="favicon.png" />
     <title>Electric Studio</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="minha-empresa.css" />
   </head>
   <body>
     <header>
       <nav>
-        <div class="logo">Electric Studio</div>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#portfolio">Portfólio</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
+        <a href="#inicio"><img src="logo.png" alt="Electric Studio" height="36" /></a>
+        <a href="#orcamento" class="btn btn-pequeno">Fazer orçamento</a>
       </nav>
     </header>
 
     <main>
-      <section id="home" class="hero">
-        <div class="hero-content">
-          <H1>Desenvolvimento de aplicações e páginas web</h1>
-          <p>
-            Desenvolvimento de apps web e web pages de forma eficiente e rápida
-          </p>
-          <a href="#servicos" class="btn">Nossos Serviços</a>
-        </div>
+      <section id="inicio" class="hero">
+        <h1>Sites e páginas web que trazem clientes</h1>
+        <a href="#orcamento" class="btn">Fazer orçamento</a>
       </section>
 
-      <section id="servicos" class="services">
-        <h2>O que fazemos</h2>
-        <div class="service-grid">
-          <div class="service-item">
-            <h3>Desenvolvimento Web</h3>
-            <p>
-              Criação de websites e aplicações web responsivas e de alta
-              performance.
-            </p>
-          </div>
-          <div class="service-item">
-            <h3>Consultoria de Software</h3>
-            <p>
-              Orientação estratégica e suporte técnico para otimizar seus
-              projetos de software.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section id="orcamento" class="orcamento">
+        <div class="card">
+          <form id="formulario" novalidate>
+            <div class="progresso">
+              <div class="barra"><span></span></div>
+              <p class="contador">1 / 4</p>
+            </div>
 
-      <section id="contato" class="contact">
-        <h2>Fale Conosco</h2>
-        <p>
-          Interessado em nossos serviços? Entre em contato e vamos conversar
-          sobre seu projeto.
-        </p>
-        <form>
-          <div class="form-group">
-            <label for="nome">Seu nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Ex.: Maria Silva" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Seu e-mail</label>
-            <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required />
-          </div>
-          <div class="form-group">
-            <label for="mensagem">Sua mensagem</label>
-            <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre o projeto" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn">Enviar Mensagem</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
+            <div class="passo" data-obrigatorio>
+              <label for="nome" class="pergunta">Nome completo <span class="obrigatorio">*</span></label>
+              <p class="ajuda">Como podemos te chamar?</p>
+              <input type="text" id="nome" name="nome" placeholder="Digite seu nome..." autocomplete="name" />
+            </div>
+
+            <div class="passo" data-obrigatorio>
+              <label for="whatsapp" class="pergunta">WhatsApp <span class="obrigatorio">*</span></label>
+              <p class="ajuda">Para continuarmos a conversa por lá.</p>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="(91) 98765-4321" autocomplete="tel" />
+            </div>
+
+            <fieldset class="passo" data-obrigatorio>
+              <legend class="pergunta">O que você precisa? <span class="obrigatorio">*</span></legend>
+              <p class="ajuda">Escolha o tipo de serviço.</p>
+              <div class="opcoes">
+                <label class="opcao"><input type="radio" name="tipo" value="Landing page" /><span>Landing page</span></label>
+                <label class="opcao"><input type="radio" name="tipo" value="Site ou loja virtual" /><span>Site ou loja virtual</span></label>
+                <label class="opcao"><input type="radio" name="tipo" value="Anúncio online" /><span>Anúncio online</span></label>
+              </div>
+            </fieldset>
+
+            <div class="passo">
+              <label for="mensagem" class="pergunta">Conte um pouco sobre o projeto</label>
+              <p class="ajuda">Opcional. Se preferir, deixe em branco.</p>
+              <textarea id="mensagem" name="mensagem" rows="4" placeholder="Ex.: quero divulgar minha loja de roupas..."></textarea>
+            </div>
+
+            <p class="aviso" role="status" aria-live="polite"></p>
+
+            <div class="acoes">
+              <button type="button" class="btn-secundario" id="voltar" hidden>← Voltar</button>
+              <button type="button" class="btn" id="continuar">Continuar →</button>
+              <button type="submit" class="btn" id="enviar" hidden>Enviar pedido</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="precos">
+          <h3>Preços</h3>
+          <ul>
+            <li><span>Landing page</span><strong>R$ 157 a R$ 314</strong></li>
+            <li><span>Site ou loja virtual</span><strong>R$ 511 a R$ 724</strong></li>
+            <li><span>Anúncio online</span><strong>Sob consulta</strong></li>
+          </ul>
+        </div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2024-2026 Electric Studio. Todos os direitos reservados.</p>
+      <p>&copy; 2024-2026 Electric Studio</p>
     </footer>
 
     <script src="site.js"></script>
