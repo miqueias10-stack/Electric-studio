@@ -1,54 +1,51 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Adiciona smooth scrolling para links de navegação
-  document.querySelectorAll("nav ul li a").forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault(); // Previne o comportamento padrão do link
+document.addEventListener("DOMContentLoaded", () => {
+  const ENDPOINT = "https://formspree.io/f/xbgdpgdz";
+  const form = document.querySelector("#contato form");
+  const botao = form.querySelector("button");
+  const aviso = form.querySelector(".form-status");
 
-      const targetId = this.getAttribute("href").substring(1);
-      const targetElement = document.getElementById(targetId);
+  function mostrarAviso(texto, tipo) {
+    aviso.textContent = texto;
+    aviso.className = "form-status " + tipo;
+  }
 
-      if (targetElement) {
-        window.scrollTo({
-          top:
-            targetElement.offsetTop -
-            document.querySelector("header").offsetHeight, // Ajusta para a altura do cabeçalho fixo
-          behavior: "smooth",
-        });
-      }
-    });
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    botao.disabled = true;
+    mostrarAviso("Enviando sua mensagem...", "");
+
+    try {
+      const resposta = await fetch(ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!resposta.ok) throw new Error("Falha no envio");
+
+      form.reset();
+      mostrarAviso("Mensagem enviada! Em breve entramos em contato.", "sucesso");
+    } catch {
+      mostrarAviso("Não foi possível enviar agora. Tente de novo em instantes.", "erro");
+    } finally {
+      botao.disabled = false;
+    }
   });
 
-  // Exemplo de uma funcionalidade mais avançada: Animação ao rolar
-  // Você pode expandir isso para adicionar classes CSS que animam elementos
-  // quando eles se tornam visíveis na tela.
+  const secoes = document.querySelectorAll("section");
+  secoes.forEach((secao) => secao.classList.add("reveal"));
 
-  const sections = document.querySelectorAll("section");
-  const options = {
-    threshold: 0.1, // Quando 10% da seção está visível
-  };
+  const observador = new IntersectionObserver(
+    (entradas, obs) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("visivel");
+          obs.unobserve(entrada.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = "translateY(0)";
-        // Adicione aqui classes para animar, por exemplo:
-        // entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target); // Para animar apenas uma vez
-      }
-    });
-  }, options);
-
-  sections.forEach((section) => {
-    // Inicialmente, esconde e move os elementos para que a animação seja visível
-    section.style.opacity = 0;
-    section.style.transform = "translateY(20px)";
-    section.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-    observer.observe(section);
-  });
-
-  // Você pode adicionar mais interatividade, como:
-  // - Um formulário de contato funcional (requer um backend)
-  // - Uma galeria de imagens para o portfólio
-  // - Animações mais complexas com bibliotecas como GSAP
+  secoes.forEach((secao) => observador.observe(secao));
 });
