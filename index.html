@@ -17,18 +17,48 @@
     <header>
       <nav>
         <a href="#inicio"><img src="logo.png" alt="Electric Studio" height="36" /></a>
-        <a href="#orcamento" class="btn btn-pequeno">Fazer orçamento</a>
+        <ul class="menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#orcamento" class="btn btn-pequeno">Orçamento</a></li>
+        </ul>
       </nav>
     </header>
 
     <main>
       <section id="inicio" class="hero">
-        <h1>Sites e páginas web que trazem clientes</h1>
+        <h1>Desenvolvimento de aplicações e páginas web</h1>
+        <p>Sites, landing pages e lojas virtuais feitos sob medida para o seu negócio.</p>
         <a href="#orcamento" class="btn">Fazer orçamento</a>
+      </section>
+
+      <section class="grade">
+        <article id="sobre" class="info-card">
+          <h2>Sobre nós</h2>
+          <p>
+            A Electric Studio é um hub criativo e tecnológico onde a engenharia de software encontra o design de interface.
+          </p>
+          <p>
+            Criamos produtos digitais que não apenas funcionam bem, mas também chamam atenção.
+          </p>
+        </article>
+
+        <article id="criadores" class="info-card">
+          <h2>Quem faz</h2>
+          <div class="criador">
+            <strong>Miquéias D. Martins</strong>
+            <span>CEO, fundador e desenvolvedor chefe</span>
+          </div>
+          <div class="criador">
+            <strong>Oséias De Oliveira Reis</strong>
+            <span>Finanças e co-fundador</span>
+          </div>
+        </article>
       </section>
 
       <section id="orcamento" class="orcamento">
         <div class="card">
+          <h2>Fazer orçamento</h2>
           <form id="formulario" novalidate>
             <div class="progresso">
               <div class="barra"><span></span></div>
@@ -72,17 +102,37 @@
               <button type="submit" class="btn" id="enviar" hidden>Enviar pedido</button>
             </div>
           </form>
-        </div>
 
-        <div class="precos">
-          <h3>Preços</h3>
-          <ul>
-            <li><span>Landing page</span><strong>a partir de R$ 800</strong></li>
-            <li><span>Site ou loja virtual</span><strong>a partir de R$ 1.500</strong></li>
-            <li><span>Anúncio online</span><strong>Sob consulta</strong></li>
-            <li><span>Consultoria de software</span><strong>R$ 150 por hora</strong></li>
-          </ul>
+          <div class="precos">
+            <h3>Preços</h3>
+            <ul>
+              <li><span>Landing page</span><strong>a partir de R$ 800</strong></li>
+              <li><span>Site ou loja virtual</span><strong>a partir de R$ 1.500</strong></li>
+              <li><span>Anúncio online</span><strong>Sob consulta</strong></li>
+              <li><span>Consultoria de software</span><strong>R$ 150 por hora</strong></li>
+            </ul>
+          </div>
         </div>
+      </section>
+
+      <section id="contato" class="grade">
+        <article class="info-card">
+          <h2>Contato</h2>
+          <ul class="lista-contato">
+            <li>
+              <span>WhatsApp</span>
+              <a href="https://wa.me/5591982039712">(91) 98203-9712</a>
+            </li>
+            <li>
+              <span>E-mail</span>
+              <a href="mailto:electricstudiocode@gmail.com">electricstudiocode@gmail.com</a>
+            </li>
+            <li>
+              <span>Instagram</span>
+              <a href="https://instagram.com/electric.studio.code">@electric.studio.code</a>
+            </li>
+          </ul>
+        </article>
       </section>
     </main>
 
