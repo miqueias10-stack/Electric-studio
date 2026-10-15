@@ -1,1 +1,6 @@
 
+User-agent: *
+Allow: /
+Crawl-delay: 20
+
+Sitemap: https://Electric-studiocode.onrender.com/sitemap.xml
