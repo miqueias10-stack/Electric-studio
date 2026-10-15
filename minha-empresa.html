@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Electric Studio - Soluções em programação, desenvolvimento web e sistemas sob medida." />
     <meta name="keywords" content="programação, desenvolvimento web, sites, software, Electric Studio" />
-<meta name="author" content="Electric Studio" />
+    <meta name="author" content="Electric Studio" />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="Electric Studio - Soluções em Programação" />
     <meta property="og:description" content="Desenvolvimento de software e soluções em programação sob medida." />
@@ -69,10 +69,20 @@
           sobre seu projeto.
         </p>
         <form>
-          <input type="text" placeholder="Seu Nome" required />
-          <input type="email" placeholder="Seu Email" required />
-          <textarea placeholder="Sua Mensagem" rows="5"></textarea>
+          <div class="form-group">
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex.: Maria Silva" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Seu e-mail</label>
+            <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required />
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Sua mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre o projeto" rows="5" required></textarea>
+          </div>
           <button type="submit" class="btn">Enviar Mensagem</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </section>
     </main>
